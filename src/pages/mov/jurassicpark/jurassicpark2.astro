@@ -1,0 +1,25 @@
+<script>
+    let addresses = [
+        'Jurassic Hunt (2021).mp4',                 
+        'Jurassic Park (1993).mp4',                 
+        'Jurassic Park 3 (2001).mp4',               
+        'Jurassic Park The Lost World (1997).mp4',
+        'Jurassic World (2015).mp4',
+        'Jurassic World Dominion (2022).mp4',
+        'Jurassic World Fallen Kingdom (2018).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/JurassicPark/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let jpark = document.getElementById(movsplit[0]);
+        jpark.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

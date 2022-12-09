@@ -1,0 +1,23 @@
+<script>
+    let addresses = [
+        'Pirates Of The Caribbean At Worlds End (2007).mp4',
+        'Pirates Of The Caribbean Curse Of The Black Pearl (2003).mp4',
+        'Pirates Of The Caribbean Dead Mans Chest (2006).mp4',
+        'Pirates Of The Caribbean Dead Men Tell No Tales (2017).mp4',
+        'Pirates Of The Caribbean On Stranger Tides (2011).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Pirates/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let pirates = document.getElementById(movsplit[0]);
+        pirates.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

@@ -1,0 +1,25 @@
+<script>
+    let addresses = [
+        'Ghost Rider (2007).mp4',                      
+        'Ghost Rider Spirit Of Vengeance (2011).mp4',  
+        'Jiu Jitsu (2020).mp4',                        
+        'National Treasure (2004).mp4',
+        'National Treasure Book Of Secrets (2007).mp4',
+        'The Rock (1996).mp4',
+        'The Sorcerers Apprentice (2010).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/NicolasCage/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let ncage = document.getElementById(movsplit[0]);
+        ncage.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

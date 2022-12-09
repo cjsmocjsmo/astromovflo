@@ -1,0 +1,25 @@
+<script>
+    let addresses = [
+        'Tremors (1990).mp4',                       
+        'Tremors 2 Aftershocks (1996).mp4',         
+        'Tremors 3 Back To Perfection (2001).mp4',  
+        'Tremors 4 The Legend Begins (2004).mp4',
+        'Tremors 5 Bloodlines (2015).mp4',
+        'Tremors A Cold Day In Hell (2018).mp4',
+        'Tremors Shrieker Island (2020).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Tremors/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let tremors = document.getElementById(movsplit[0]);
+        tremors.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

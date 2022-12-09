@@ -1,0 +1,31 @@
+<script>
+    let addresses = [
+        'Conan The Barbarian (1982).mp4',                
+        'Conan The Destroyer (1984).mp4',                
+        'Predator (1987).mp4',                           
+        'Predator 2 (1990).mp4',                         
+        'Terminator 2 (1991).mp4',                       
+        'Terminator 3 Rise Of The Machines (2003).mp4',  
+        'Terminator Genisys (2015).mp4',
+        'Terminator Salvation (2009).mp4',
+        'The Last Stand (2013).mp4',
+        'The Terminator (1984).mp4',
+        'Total Recall EXTENDED (2012).mp4',
+        'Total Recall Mind Bending Edition (1990).mp4',
+        'True Lies (1994).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Arnold/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let arnold = document.getElementById(movsplit[0]);
+        arnold.addEventListener("click", () => {
+            let response = fetch(addr);
+        })
+    }
+</script>

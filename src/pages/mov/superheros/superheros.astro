@@ -1,0 +1,29 @@
+---
+import Layout from "../../../layouts/LayoutPage.astro";
+import Superheroes2 from "./superheros2.astro";
+
+const response = await fetch("http://192.168.0.94:8888/intSuperHeros");
+const data = await response.json();
+
+---
+
+<Superheroes2 />
+
+<Layout title="Super Heros">
+    <main>
+        <div class="grid grid-cols-5 gap-2 flex items-center">
+            {
+                data.map((d) => (
+                    <div class="m-4">
+                        <img
+                            id={d.movname}
+                            src={d.httpthumbpath}
+                            class="max-w-full h-auto rounded-lg"
+                            alt={d.movname}
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</Layout>

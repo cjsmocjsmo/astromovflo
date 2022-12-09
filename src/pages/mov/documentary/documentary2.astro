@@ -1,0 +1,75 @@
+<script>
+    let addresses = [
+        'A Beautiful Planet (2016).mp4',
+        'Apollo 11 (2019).mp4',
+        'Apollo 13 (1995).mp4',
+        'A Tribute To Her Majesty The Queen (2022).mp4',
+        'B2 Stealth At War (2013).mp4',
+        'Bear Witness (2022).mp4',
+        'Becoming Cousteau (2021).mp4',
+        'Betty White Goes Wild (2013).mp4',
+        'Big Cat Week Russias Wild Tiger (2022).mp4',
+        'Big Cat Week The Way Of The Cheetah (2022).mp4',
+        'Bob Ballard An Explorers Life (2020).mp4',
+        'Built For Mars The Perseverance Rover (2021).mp4',
+        'Challenger Disaster Lost Tapes (2016).mp4',
+        'Chinas Megatomb Revealed (2016).mp4',
+        'CNN Special Report The Cult Of QAnon (2021).mp4',
+        'David Attenboroughs Tasmania (2018).mp4',
+        'Deep In The Heart A Texas Wildlife Story (2022).mp4',
+        'Dinosaurs The Final Day With David Attenborough (2022).mp4',
+        'Einsteins Universe (1979).mp4',
+        'Evolution .4K (2018).mkv',
+        'Explorer (2022).mp4',
+        'Flooded Tombs Of The Nile (2021).mp4',
+        'Hawking Can You Hear Me (2021).mp4',
+        'Hubbles Cosmic Journey (2015).mp4',
+        'Infinite Potential The Life Ideas Of David Bohm (2020).mp4',
+        'Intelligent Trees (2016).mp4',
+        'Into The Inferno (2016).mp4',
+        'Journey To The Edge Of The Universe (2008).mp4',
+        'Lost Tombs Of The Pyramids (2020).mp4',
+        'Lost Worlds Life In The Balance (2001).mp4',
+        'Mission To The Sun (2018).mp4',
+        'Mystery In Yellowstone (2015).mp4',
+        'Nova Butterfly Blueprints (2022).mp4',
+        'Obi Wan Kenobi A Jedis Return (2022).mp4',
+        'Only The Brave (2017).mp4',
+        'Patterns Of Evidence The Red Sea Miracle (2020).mp4',
+        'Patterns Of Evidence The Red Sea Miracle Ii (2020).mp4',
+        'Perpetual Planet Heroes Of The Oceans (2021).mp4',
+        'Planet Earth A Celebration (2020).mp4',
+        'Polar Bear (2022).mp4',
+        'Polar Bears (2020).mp4',
+        'Roger Waters The Wall (2014).mp4',
+        'Shatner In Space (2021).mp4',
+        'Solar System The Secrets Of The Universe (2014).mp4',
+        'Tanks Of Fury (2014).mp4',
+        'Thailands Wild Cats (2021).mp4',
+        'The Edge Of All We Know (2020).mp4',
+        'The Frozen Kingdom Of The Snow Leopard (2020).mp4',
+        'The Hunt For Dark Matter (2017).mp4',
+        'The Hurt Locker (2008).mp4',
+        'The Lost City Of The Monkey God (2018).mp4',
+        'The Lost Tomb Of Alexander The Great (2019).mp4',
+        'The Real Right Stuff (2020).mp4',
+        'The Rescue (2021).mp4',
+        'Tutankhamun In Color (2020).mp4',
+        'Under The Helmet The Legacy Of Bobba Fett (2021).mp4',
+        'Voyage Of Time (2021).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Documentary/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let documentary = document.getElementById(movsplit[0]);
+        documentary.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

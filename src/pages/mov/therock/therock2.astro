@@ -1,0 +1,29 @@
+<script>
+    let addresses = [
+        'Hercules (2014).mp4',                         
+        'Journey 2 The Mysterious Island (2012).mp4',  
+        'Jumanji (1995).mp4',                          
+        'Jumanji The Next Level (2019).mp4',           
+        'Jumanji Welcome To The Jungle (2017).mp4',    
+        'Jungle Cruise (2021).mp4',
+        'Race To Witch Mountain (2009).mp4',
+        'Rampage (2018).mp4',
+        'Red Notice (2021).mp4',
+        'Rundown (2003).mp4',
+        'Skyscraper (2018).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/TheRock/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let therock = document.getElementById(movsplit[0]);
+        therock.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

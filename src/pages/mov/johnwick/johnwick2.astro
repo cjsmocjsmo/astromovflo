@@ -1,0 +1,25 @@
+<script>
+    let addresses = [
+        'John Wick (2014).mp4',            
+        'John Wick Chapter 2 (2017).mp4',  
+        'John Wick Chapter 3 (2020).mp4',  
+        'The Matrix (1999).mp4',
+        'The Matrix Reloaded (2003).mp4',
+        'The Matrix Resurrections (2021).mp4',
+        'The Matrix Revolutions (2003).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/JohnWick/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let wick = document.getElementById(movsplit[0]);
+        wick.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

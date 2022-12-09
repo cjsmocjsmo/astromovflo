@@ -1,0 +1,37 @@
+<script>
+    let addresses = [
+        'Bulletproof Monk (2003).mp4',          
+        'Clash Of The Titans (2010).mp4',       
+        'Death On The Nile (2022).mp4',         
+        'Dracula Untold (2014).mp4',            
+        'Dunkirk (2017).mp4',                   
+        'Flaming Star (1960).mp4',              
+        'Halo 4 Forward Unto Dawn (2012).mp4',  
+        'Halo Legends (2010).mp4',              
+        'Halo The Fall Of Reach (2015).mp4',    
+        'Inferno (2016).mp4',
+        'It (2017).mp4',
+        'The Curse Of Sleeping Beauty (2016).mp4',
+        'The Dark Tower (2017).mp4',
+        'The Great Wall (2016).mp4',
+        'The Green Knight (2021).mp4',
+        'The Meg (2018).mp4',
+        'The Munsters (2022).mp4',
+        'The Woman King (2022).mp4',
+        'Wrath Of The Titans (2012).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Misc/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let misc = document.getElementById(movsplit[0]);
+        misc.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

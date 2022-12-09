@@ -1,0 +1,26 @@
+<script>
+    let addresses = [
+        'Pacific Rim (2013).mp4',                
+        'Pacific Rim Uprising (2018).mp4',       
+        'The Transformers The Movie (1986).mp4',  
+        'Transformers (2007).mp4',               
+        'Transformers 3 (2011).mp4',
+        'Transformers Age Of Extinction (2014).mp4',
+        'Transformers Revenge Of The Fallen (2009).mp4',
+        'Transformers The Last Knight (2017).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Transformers/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let transformers = document.getElementById(movsplit[0]);
+        transformers.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

@@ -1,0 +1,22 @@
+<script>
+    let addresses = [
+        'Chronicals Of Riddick (2004).mp4',  
+        'Pitch Black (2000).mp4',             
+        'Riddick (2013).mp4',
+        'The Chronicles Of Riddick Into Pitch Black (2000).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Riddick/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let riddick = document.getElementById(movsplit[0]);
+        riddick.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>

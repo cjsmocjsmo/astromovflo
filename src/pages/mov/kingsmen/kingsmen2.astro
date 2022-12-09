@@ -1,0 +1,21 @@
+<script>
+    let addresses = [
+        'Kingsman The Golden Circle (2017).mp4',   
+        'The Kings Man (2021).mp4',
+        'Kingsman The Secret Service (2015).mp4',
+    ];
+
+    let ad = "http://192.168.0.94:8181/OmxplayerPlayMediaReact?medPath=";
+    let ad2 = "/media/pi/PiTB/media/Movies/Kingsman/";
+
+    for (var i = 0; i < addresses.length; i++) {
+        let addr = ad + ad2 + addresses[i];
+        let moviename = addresses[i].split(" ").join("");
+        let movsplit = moviename.split("(");
+        
+        let kmen = document.getElementById(movsplit[0]);
+        kmen.addEventListener("click", () => {
+            let response = fetch(addr);
+        });
+    }
+</script>
