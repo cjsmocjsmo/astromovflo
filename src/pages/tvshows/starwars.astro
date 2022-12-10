@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/LayoutPage.astro";
+
+import LokiImg from '../../../images/mcu/loki.webp';
+import HawkeyeImg from '../../../images/mcu/Hawkeye.webp'
+import IAmGrootImg from '../../../images/mcu/iamgroot.webp'
+import FalconWinterSoldierImg from '../../../images/mcu/falconwintersoldier.webp';
+import MSMarvelImg from '../../../images/mcu/ms_marvel.webp'
+import SheHulkImg from '../../../images/mcu/shehulk.webp';
+import WandaVisionImg from '../../../images/mcu/wandavision.webp';
+
+import LokiCard from '../../components/mcu/LokiCard.astro';
+import HawkeyeCard from '../../components/mcu/HawkEyeCard.astro';
+import IAmGroot from '../../components/mcu/IAmGrootCard.astro';
+import FalconWinterSoldierCard from "../../components/mcu/FalconWinterSoldierCard.astro";
+import MSMarvel from '../../components/mcu/MSMarvelCard.astro';
+import SheHulk from '../../components/mcu/SheHulkCard.astro';
+import WandaVision from '../../components/mcu/WandaVisionCard.astro';
+
+
+
+---
+
+<Layout title="MCU">
+    <main>
+        <div class="grid grid-cols-5 gap-2 flex items-center">
+            <SheHulk title="She Hulk" src={SheHulkImg} />
+            <HawkeyeCard title="Hawk Eye" src={HawkeyeImg} />
+            <LokiCard title="Loki" src={LokiImg} />
+            <IAmGroot title="I Am Groot" src={IAmGrootImg} />
+            <FalconWinterSoldierCard title="Falcon Winter Soldier" src={FalconWinterSoldierImg} />
+            <MSMarvel title="Ms Marvel" src={MSMarvelImg} />
+            <WandaVision title="Wanda Vision" src={WandaVisionImg} />
+
+            <!-- <img src={Loki} alt=""/> -->
+            <!-- {
+                data.map((d) => (
+                    <div class="m-4">
+                        <img
+                            id={d.movname}
+                            src={d.httpthumbpath}
+                            class="max-w-full h-auto rounded-lg"
+                            alt={d.movname}
+                        />
+                    </div>
+                ))
+            } -->
+        </div>
+    </main>
+</Layout>

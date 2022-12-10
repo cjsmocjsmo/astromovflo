@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AlienWorldsImg from '../../images/alienworlds.webp';
+import AlienWorldsCard from '../../components/scifi/AlienWorldsCard.astro';
+import AlteredCarbonImg from '../../images/alteredcarbon.webp';
+import AlteredCarbonCard from '../../components/scifi/AlteredCarbonCard.astro';
+
+import CowboyBeBopImg from '../../images/cowboy_bebop.webp';
+import CowboyBeBopCard from "../../components/scifi/CowboyBeBop.astro";
+
+import ForAllManKindImg from '../../images/forallmankind.webp';
+import ForAllManKindCard from '../../components/scifi/ForAllManKindCard.astro';
+
+import FoundationImg from '../../images/Foundation_1Thumb.webp';
+import FoundationCard from '../../components/scifi/FoundationCard.astro';
+
+import HaloImg from '../../images/halo.webp';
+import HaloCard from "../../components/scifi/HaloCard.astro";
+---
+
+<Layout title="SciFi">
+    <main>
+        <div class="grid grid-cols-5 gap-2 flex items-center">
+            <AlienWorldsCard title="She Hulk" src={AlienWorldsImg} />
+            <AlteredCarbonCard title="Altered Carbon" src={AlteredCarbonImg} />
+            <CowboyBeBopCard title="Cowboy BeBop" src={CowboyBeBopImg} />
+			<ForAllManKindCard title="For All Mankind" src={ForAllManKindImg} />
+			<FoundationCard title="Foundation" src={FoundationImg} />
+			<HaloCard title="Halo" src={HaloImg} />
+        </div>
+    </main>
+</Layout>
