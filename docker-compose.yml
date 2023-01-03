@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   astromovflo:
-    image: astromovflo:0.2.1
+    image: astromovflo:0.2.2
     build: .
     networks:
       - astromovflo
